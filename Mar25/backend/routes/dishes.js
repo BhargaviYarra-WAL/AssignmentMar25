@@ -1,0 +1,11 @@
+var express = require("express");
+var router = express.Router();
+var dishesController = require("../controllers/dishes");
+router.get("/createtable", dishesController.createtable);
+router.post("/", dishesController.addDishes);
+router.get("/", dishesController.selectAll);
+router.get("/:name", dishesController.viewDish);
+router.delete("/:id", dishesController.deleteDish);
+router.delete("/", dishesController.deleteAll);
+router.put("/:id", dishesController.updateDishes);
+module.exports = router;
